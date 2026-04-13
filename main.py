@@ -47,5 +47,7 @@ def main():
 
     if choice == "e":
         result = encrypt(message_list)
+        print("Encrypted:", result)
+  else:
 
 
