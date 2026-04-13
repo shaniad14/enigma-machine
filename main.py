@@ -53,5 +53,7 @@ def main():
      result = decrypt(message_list)
      print("Decrypted:", result)
 
+     main()
+
 
 
