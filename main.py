@@ -11,3 +11,14 @@ def clean_input(text):
 # encrypts the message
 def encrypt(message_list):
     result = []
+
+
+    for char in message_list:
+        if char.isalpha():  # only change letters
+            new_char = chr(ord(char) + SHIFT)
+            result.append(new_char)
+        else:
+            result.append(char)  # keep spaces/punctuation
+
+    return "".join(result)
+
