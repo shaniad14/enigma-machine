@@ -22,3 +22,15 @@ def encrypt(message_list):
 
     return "".join(result)
 
+    # decrypts the message
+def decrypt(message_list):
+    result = []
+
+    for char in message_list:
+        if char.isalpha():
+            new_char = chr(ord(char) - SHIFT)
+            result.append(new_char)
+        else:
+            result.append(char)
+
+
