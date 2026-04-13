@@ -33,4 +33,14 @@ def decrypt(message_list):
         else:
             result.append(char)
 
+            return "".join(result)
+
+
+# main part of program
+def main():
+    choice = input("Encrypt or Decrypt (E/D): ").strip().lower()
+
+    message = input("Enter message: ")
+    message = clean_input(message)
+
 
