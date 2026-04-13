@@ -43,4 +43,9 @@ def main():
     message = input("Enter message: ")
     message = clean_input(message)
 
+    message_list = list(message)  # turn into list
+
+    if choice == "e":
+        result = encrypt(message_list)
+
 
