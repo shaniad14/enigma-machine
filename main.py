@@ -13,12 +13,12 @@ def encrypt(message_list):
 
     for char in message_list:
         if char.isalpha():  # only change letters
-            # FIX: proper Caesar shift (wrap around alphabet)
+            #  proper Caesar shift (wrap around alphabet)
             base = ord('A') if char.isupper() else ord('a')
             new_char = chr((ord(char) - base + SHIFT) % 26 + base)
             result.append(new_char)
         else:
-            result.append(char)  # keep spaces/punctuation
+            result.append(char)  # keep spaces and punctuation
 
     return "".join(result)
 
@@ -29,14 +29,14 @@ def decrypt(message_list):
 
     for char in message_list:
         if char.isalpha():
-            # FIX: proper reverse shift
+            #  proper reverse shift
             base = ord('A') if char.isupper() else ord('a')
             new_char = chr((ord(char) - base - SHIFT) % 26 + base)
             result.append(new_char)
         else:
             result.append(char)
 
-    return "".join(result)  # FIX: moved outside loop
+    return "".join(result)   #moved outside loop
 
 
 # main part of program
@@ -49,7 +49,6 @@ def main():
     message = input("Enter message: ")
     message = clean_input(message)
 
-    # OPTIONAL (to show dictionary use)
     data = {"message": message}
 
     message_list = list(data["message"])  # turn into list
@@ -66,7 +65,6 @@ def main():
         print("Invalid choice. Please enter E or D.")
 
 
-# FIX: proper program start
 if __name__ == "__main__":
     main()
 
